@@ -19,7 +19,10 @@ public class SnakeandLadder
 				position -= dieRoll;
 				break;
 			case LADDER:
-				position += dieRoll;
+				if( position+dieRoll>100)
+				position = position;
+				else
+				position+=dieRoll;
 				break;
 		}
 		if (position<0)
