@@ -22,7 +22,9 @@ public class SnakeandLadder
 				position += dieRoll;
 				break;
 		}
-	return position;
+		if (position<0)
+			position=INTIAL_POSITION;
+		return position;
 	}
 
 	public static void main(String[] args)
@@ -30,9 +32,12 @@ public class SnakeandLadder
 		int numberOfPlayers = 1;
 		int position = 0;
 		System.out.println("Welcome to Snake and Ladder Simulation");
-		int dieRoll = (int) ((Math.random() * 6 ) + 1 );
-		position=optionCheck(dieRoll,position);
-		System.out.println("Number got by rolling a die: "+dieRoll+" position: "+position);
+		while (position<FINAL_POSITION)
+		{
+			int dieRoll = (int) ((Math.random() * 6 ) + 1 );
+			position=optionCheck(dieRoll,position);
+		}
+		System.out.println("final position: "+position);
 		
 	}
 }
