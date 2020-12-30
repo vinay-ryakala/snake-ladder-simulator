@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SnakeandLadder
 {
 	//constants
@@ -33,14 +35,19 @@ public class SnakeandLadder
 	public static void main(String[] args)
 	{
 		int numberOfPlayers = 1;
+		ArrayList<Integer> positions=new ArrayList<>();
+		int count=0;
 		int position = 0;
+		
 		System.out.println("Welcome to Snake and Ladder Simulation");
 		while (position<FINAL_POSITION)
 		{
 			int dieRoll = (int) ((Math.random() * 6 ) + 1 );
 			position=optionCheck(dieRoll,position);
+			positions.add(position);
+			count++;
 		}
-		System.out.println("final position: "+position);
-		
+		System.out.println("final position: "+position+" number of times die rolled: " +count);
+		System.out.println("position after every roll"+positions);
 	}
 }
